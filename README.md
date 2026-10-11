@@ -238,6 +238,11 @@ Made by Jake Schincariol, [opusjake.ai](https://opusjake.ai). Siblings:
 
 opencode support and `opencode.json` added by Khaled Mahfouz.
 
+Contact: [LinkedIn](https://linkedin.com/in/khaled-mhfz-a82716331) ·
+[GitHub](https://github.com/KhaledMahfouz5) ·
+[Telegram](https://t.me/khaledmhfz) ·
+[khaledmhfz2004@gmail.com](mailto:khaledmhfz2004@gmail.com)
+
 ## License
 
 MIT. Take it, change it, ship it.
