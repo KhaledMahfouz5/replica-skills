@@ -42,8 +42,9 @@ npm run build                                                        # productio
 ```
 
 (Paths are relative to wherever the pack is installed. Under
-`~/.claude/skills/` that is `~/.claude/skills/replica-diff/parity.py` and so
-on.)
+`~/.claude/skills/` that is `~/.claude/skills/replica-diff/parity.py`, under
+`~/.config/opencode/skills/` that is `~/.config/opencode/skills/replica-diff/parity.py`,
+and so on. Project-local installs put the same folders next to your repo.)
 
 Plus by hand: no open S1 or S2 bugs, privacy policy and terms pages live
 (listing every processor), cookie banner if you use non-essential cookies in
