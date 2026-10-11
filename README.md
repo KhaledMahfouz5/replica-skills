@@ -236,6 +236,8 @@ Made by Jake Schincariol, [opusjake.ai](https://opusjake.ai). Siblings:
 [LinkedIn](https://github.com/Jakeschincariol/linkedin-agent-skill),
 [Instagram](https://github.com/Jakeschincariol/instagram-agent-skill).
 
+opencode support and `opencode.json` added by Khaled Mahfouz.
+
 ## License
 
 MIT. Take it, change it, ship it.
