@@ -8,7 +8,12 @@ description: >-
   positioning angle you can sell. Every quote is real, verbatim and linked.
   Use when the user says "what do people hate about X", "read the reviews",
   "how do I make mine better", "find the gap", "what features are missing",
-  "how do I position this", "make it sellable", or after /replica-diff.
+  "how do I position this", "  make it sellable", or after /replica-diff.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-entrepreneur

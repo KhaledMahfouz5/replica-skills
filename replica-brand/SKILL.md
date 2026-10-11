@@ -7,7 +7,12 @@ description: >-
   finds anything of the original left in the codebase. Use when the user says
   "name my app", "rebrand the clone", "make it mine", "pick a name and
   colours", "logo brief", "brand voice", "check for leftovers", or after
-  /replica-entrepreneur. Always runs before /replica-launch.
+  /replica-entrepreneur. Always runs   before /replica-launch.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-brand

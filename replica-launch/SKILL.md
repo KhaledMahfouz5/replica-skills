@@ -8,6 +8,11 @@ description: >-
   "landing page", "pricing", "how much should I charge", "App Store
   listing", "store screenshots", "launch plan", "Product Hunt", or after
   /replica-brand.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-launch

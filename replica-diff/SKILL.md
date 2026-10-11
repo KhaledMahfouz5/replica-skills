@@ -8,6 +8,11 @@ description: >-
   user says "how close is my clone", "compare it to the original", "what's
   missing", "parity check", "diff the screens", "is it ready", or after
   /replica-test.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-diff

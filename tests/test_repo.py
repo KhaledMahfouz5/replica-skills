@@ -2,6 +2,7 @@ import json
 import os
 import re
 import unittest
+from fnmatch import fnmatch
 
 from _load import ROOT
 
@@ -43,6 +44,43 @@ class Repo(unittest.TestCase):
             market = json.load(fh)
         self.assertEqual(market["name"], "replica-skill")
         self.assertEqual(market["plugins"][0]["name"], "replica-skill")
+
+
+class OpenCodeCompat(unittest.TestCase):
+    """opencode reads .claude/skills/ natively, but a first-class install needs
+    opencode.json at the project or global config root. These tests guard both
+    paths so the opencode surface cannot regress without failing CI."""
+
+    def test_opencode_json_exists_and_parses(self):
+        path = os.path.join(ROOT, "opencode.json")
+        self.assertTrue(os.path.isfile(path), "opencode.json missing at repo root")
+        with open(path, encoding="utf-8") as fh:
+            cfg = json.load(fh)
+        self.assertEqual(cfg.get("$schema"), "https://opencode.ai/config.json")
+        self.assertIn("permission", cfg)
+        self.assertIn("skill", cfg["permission"])
+
+    def test_opencode_json_allows_every_replica_skill(self):
+        with open(os.path.join(ROOT, "opencode.json"), encoding="utf-8") as fh:
+            cfg = json.load(fh)
+        skill_rules = cfg["permission"]["skill"]
+        for s in SKILLS:
+            self.assertTrue(
+                any(fnmatch(s, pat) and action == "allow"
+                    for pat, action in skill_rules.items()),
+                "%s not covered by an 'allow' pattern in opencode.json" % s,
+            )
+
+    def test_skill_frontmatter_carries_opencode_metadata(self):
+        for s in SKILLS:
+            fm, _ = frontmatter(os.path.join(ROOT, s, "SKILL.md"))
+            self.assertIn('license: MIT', fm, "%s missing license: MIT" % s)
+            self.assertIn("compatibility: opencode", fm,
+                          "%s missing compatibility: opencode" % s)
+            self.assertIn('opencode/slash: "true"', fm,
+                          "%s missing opencode/slash: true" % s)
+            self.assertIn('opencode/autoinvoke: "false"', fm,
+                          "%s missing opencode/autoinvoke: false" % s)
 
     def test_readme_carries_the_reel_copy(self):
         with open(os.path.join(ROOT, "README.md"), encoding="utf-8") as fh:

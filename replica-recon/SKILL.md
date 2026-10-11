@@ -8,6 +8,11 @@ description: >-
   "reverse engineer X", "how does X work", "map out X", "what screens does X
   have", "I want to build my own version of X", "copy this app", or pastes an
   app's URL or App Store link and wants to rebuild it.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-recon

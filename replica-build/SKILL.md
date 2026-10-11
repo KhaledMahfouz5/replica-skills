@@ -7,6 +7,11 @@ description: >-
   the original's code, assets or copy. Use when the user says "build the
   clone", "build screen S07", "start building", "rebuild this screen",
   "implement the booking page", or after /replica-design.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-build

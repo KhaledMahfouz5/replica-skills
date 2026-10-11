@@ -8,6 +8,11 @@ description: >-
   user says "test my clone", "find bugs", "QA this", "click through
   everything", "write e2e tests", "does it work", or after /replica-build or
   /replica-backend.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-test

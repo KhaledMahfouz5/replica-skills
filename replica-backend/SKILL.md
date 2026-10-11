@@ -6,7 +6,12 @@ description: >-
   integrations through official APIs only, plus a security checklist. Use when
   the user says "add login", "set up auth", "wire up the database", "add
   payments", "connect Stripe", "add Google Calendar", "send emails",
-  "backend for my clone", or when /replica-build is running on fake data.
+  "backend for my clone", or when   /replica-build is running on fake data.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-backend

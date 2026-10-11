@@ -8,6 +8,11 @@ description: >-
   mobile builds to TestFlight and Play. Use when the user says "deploy it",
   "ship it", "put it live", "connect my domain", "go to production",
   "publish the app", or after /replica-launch.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-deploy

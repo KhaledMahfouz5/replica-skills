@@ -8,6 +8,11 @@ description: >-
   checker. Use when the user says "match the design", "rebuild the design
   system", "get the colours and fonts", "make it look like X", "design tokens
   for my clone", or after /replica-architect.
+license: MIT
+compatibility: opencode
+metadata:
+  opencode/slash: "true"
+  opencode/autoinvoke: "false"
 ---
 
 # replica-design

@@ -1,7 +1,8 @@
 # The Replica skill
 
 Eleven Claude skills that clone any app. Free, MIT, no signup, no API key,
-nothing to connect.
+nothing to connect. Also works in opencode: same skills, exposed as slash
+commands.
 
 One reverse-engineers the app you want to clone. One rebuilds it. One tests it
 for bugs. And one is the Entrepreneur: it reads what the app's users hate and
@@ -46,6 +47,26 @@ Project-local instead of global: copy the same folders into your repo's
 `.claude/skills/`. No Claude Code at all? Paste any single `SKILL.md` at the
 top of a chat and it runs as a mode. You lose the Python tools, but the
 method works.
+
+In opencode, each skill is exposed as a slash command (`/replica-recon`,
+`/replica-architect`, and so on). The SKILL.md frontmatter carries
+`opencode/slash: "true"`, so they show up in the TUI picker, and
+`opencode/autoinvoke: "false"` so the model only fires them when you ask.
+opencode already reads `~/.claude/skills/` natively, so the install path
+above works there too. For first-class opencode install:
+
+```bash
+git clone https://github.com/Jakeschincariol/replica-skill.git
+cp -r replica-skill/replica-* replica-skill/opencode.json ./
+```
+
+Project-local, with `opencode.json` declaring `permission.skill: { replica-*: "allow" }`
+so the skills load immediately. Global install instead:
+
+```bash
+cp -r replica-skill/replica-* ~/.config/opencode/skills/
+cp replica-skill/opencode.json ~/.config/opencode/opencode.json
+```
 
 The tools need Python 3.8 or newer. Nothing to pip install.
 
@@ -199,6 +220,8 @@ replica-entrepreneur/  SKILL.md, reviews.py, themes.json
 replica-brand/         SKILL.md, sweep.py
 replica-launch/        SKILL.md, listing.py, listing.example.json
 replica-deploy/        SKILL.md, preflight.md
+.claude-plugin/        plugin.json, marketplace.json (Claude Code plugin)
+opencode.json          opencode skill permission allow-list (replica-*)
 tests/                 the tests for every tool
 ```
 
